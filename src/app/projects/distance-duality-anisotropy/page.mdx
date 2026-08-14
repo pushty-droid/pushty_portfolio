@@ -1,0 +1,56 @@
+import { Beat, ProjectPage } from "@/components/ProjectPage";
+import { Figure } from "@/components/Figure";
+
+export const metadata = {
+  title: "Directional tests of the cosmic distance duality relation",
+  description:
+    "A model-independent search for directional anisotropy in the cosmic distance duality relation, using 960 Pantheon+ supernovae, twelve BAO measurements and Gaussian-process reconstruction.",
+};
+
+<ProjectPage slug="distance-duality-anisotropy">
+
+<Beat label="The question">
+
+The Etherington reciprocity relation,
+
+$$
+\eta(z) = \frac{D_L}{(1+z)^2\, D_A} = 1,
+$$
+
+follows from pure geometry and holds in any metric theory of gravity. But nearly every test of it assumes the universe looks the same in all directions. If it doesn't — and radio-source dipoles and supernova data both hint that it might not — those tests could be quietly biased. Does the relation itself depend on where you look?
+
+</Beat>
+
+<Beat label="My approach">
+
+I combined 960 Pantheon+ supernovae at $z > 0.1$ with twelve BAO measurements spanning 6dFGS through DESI DR2, plus 32 cosmic chronometer $H(z)$ points.
+
+Rather than assuming ΛCDM, I reconstructed the BAO-derived luminosity distance with Gaussian Process Regression — a Matérn $\nu = 3/2$ kernel for $H(z)$, an RBF kernel for $D_L^{\mathrm{BAO}}$, both chosen by 5-fold cross-validation.
+
+I then extended the standard parameterization to
+
+$$
+\eta(z, \hat{n}) = (1 + \eta_1 z)\,(1 + \hat{n} \cdot \mathbf{D}),
+$$
+
+propagated the full Pantheon+ covariance into luminosity-distance space, and sampled the posterior with `emcee` under three different supernova calibrations (free $M_B$, DB23, SH0ES).
+
+</Beat>
+
+<Beat label="What I found">
+
+No anisotropy — with a caveat that turned out to be the more interesting result.
+
+The dipole amplitude is constrained to $A < 0.025$ at 95%, stable across all three calibrations. But the null tests showed why that stability matters: shuffling supernova magnitudes while keeping the real sky positions produces a spurious dipole peaking at $A \approx 0.048$, six times the observed value, purely from uneven survey coverage. Replacing the positions with isotropic random vectors drops that to $A \approx 0.017$.
+
+In other words, survey geometry alone can manufacture an anisotropy signal larger than anything in the data, which is a caution for any dipole search that skips this step.
+
+<Figure
+  src={null}
+  alt="Null-test histogram showing spurious dipole amplitudes from real sky geometry and from isotropic random positions, with the observed value marked."
+  caption="Figure 6 — Null-test histogram. The green distribution uses the real sky geometry, the blue one isotropic random positions; the observed A = 0.008 is marked as a vertical line."
+/>
+
+</Beat>
+
+</ProjectPage>

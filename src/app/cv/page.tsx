@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { Band } from "@/components/Band";
+import { BandHero } from "@/components/BandHero";
 import { PrintButton } from "@/components/PrintButton";
 import { SciNotation } from "@/components/SciNotation";
 import { LinkList } from "@/components/LinkList";
@@ -22,12 +24,26 @@ export const metadata: Metadata = {
  */
 export default function CvPage() {
   return (
-    <div className="container-page pb-8 pt-14 sm:pt-20">
+    <>
+      {/* The hero is screen furniture. On paper the masthead below is the
+          document's real header, so the band is dropped from the print. */}
+      <div data-print-hide>
+        <BandHero
+          eyebrow="Curriculum vitae"
+          title="CV"
+          image={null}
+          intro="The full record — education, research, publications, talks, skills and outreach. Print this page for a clean PDF."
+        />
+      </div>
+
+      {/* One continuous light band rather than a banded spread: this is the
+          page people print, and it has to read as a single document. */}
+      <Band tone="light">
       {/* Masthead */}
       <header className="border-b-2 border-ink pb-6">
         <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
           <div>
-            <h1 className="text-[clamp(2rem,4.5vw,2.75rem)] font-semibold leading-tight tracking-tight">
+            <h1 className="text-[clamp(2rem,4.5vw,2.75rem)] uppercase leading-tight">
               {profile.name}
             </h1>
             <p className="meta mt-2 max-w-[52ch]">{profile.oneLinerLong}</p>
@@ -210,7 +226,8 @@ export default function CvPage() {
           ))}
         </ul>
       </CvSection>
-    </div>
+      </Band>
+    </>
   );
 }
 
@@ -238,7 +255,11 @@ function CvEntry({
     <div className="grid gap-x-8 gap-y-1 md:grid-cols-[7rem_1fr]" data-print-keep>
       <p className="meta md:text-right">{left}</p>
       <div>
-        <h3 className="text-[1.05rem] font-semibold leading-snug">{heading}</h3>
+        {/* font-sans: these run at ~1rem, below the size the condensed
+            display face is legible at. */}
+        <h3 className="font-sans text-[1.05rem] font-semibold leading-snug tracking-normal">
+          {heading}
+        </h3>
         <p className="meta">{sub}</p>
         <div className="mt-1.5 space-y-1">{children}</div>
       </div>

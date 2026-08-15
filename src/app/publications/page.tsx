@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { Band } from "@/components/Band";
+import { BandHero } from "@/components/BandHero";
 import { BibtexBlock } from "@/components/BibtexBlock";
-import { PageHeader } from "@/components/PageHeader";
+import { Reveal } from "@/components/Reveal";
 import { SciNotation } from "@/components/SciNotation";
 import { publications } from "@/data/publications";
 
@@ -15,16 +17,17 @@ export const metadata: Metadata = {
 export default function PublicationsPage() {
   return (
     <>
-      <PageHeader
+      <BandHero
         eyebrow="Publications"
         title="Papers and preprints"
+        image={null}
         intro="One first-author preprint prepared for JCAP, and a completed M.Sc. thesis."
       />
 
-      <section className="container-page pt-16">
-        <div className="space-y-20">
-          {publications.map((publication) => (
-            <article key={publication.title} className="border-b border-rule pb-16 last:border-b-0">
+      {publications.map((publication, index) => (
+        <Band key={publication.title} tone={index === 0 ? "violet" : "light"}>
+          <Reveal>
+            <article>
               <div className="meta flex flex-wrap items-center gap-x-3 gap-y-1">
                 <span>{publication.year}</span>
                 <span aria-hidden="true">·</span>
@@ -37,9 +40,16 @@ export default function PublicationsPage() {
                 )}
               </div>
 
-              <h2 className="type-h2 mt-3 max-w-[32ch]">
+              {/* Sentence case, not the display face — these are paper titles
+                  and they have to stay quotable as written. */}
+              <h2 className="mt-3 max-w-[34ch] font-sans text-[clamp(1.35rem,2.4vw,1.75rem)] font-semibold leading-snug tracking-normal">
                 {publication.url ? (
-                  <a href={publication.url} target="_blank" rel="noreferrer" className="transition-colors hover:text-accent">
+                  <a
+                    href={publication.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition-colors hover:text-accent"
+                  >
                     {publication.title}
                   </a>
                 ) : (
@@ -47,7 +57,9 @@ export default function PublicationsPage() {
                 )}
               </h2>
 
-              <p className="meta mt-2">{publication.authors}</p>
+              <span aria-hidden="true" className="grad-bar mt-5" />
+
+              <p className="meta mt-5">{publication.authors}</p>
 
               <p className="measure mt-6 leading-relaxed">{publication.description}</p>
 
@@ -56,14 +68,24 @@ export default function PublicationsPage() {
               )}
 
               {/* Links row — each entry appears only if the data has it */}
-              <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-3">
+              <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-3">
                 {publication.url && (
-                  <a href={publication.url} target="_blank" rel="noreferrer" className="btn-primary">
+                  <a
+                    href={publication.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-primary"
+                  >
                     {publication.arxivId ? `arXiv:${publication.arxivId}` : "Read"}
                   </a>
                 )}
                 {publication.doi && (
-                  <a href={publication.doi} target="_blank" rel="noreferrer" className="btn-secondary">
+                  <a
+                    href={publication.doi}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-secondary"
+                  >
                     DOI
                   </a>
                 )}
@@ -73,7 +95,10 @@ export default function PublicationsPage() {
                   </a>
                 )}
                 {publication.projectSlug && (
-                  <Link href={`/projects/${publication.projectSlug}`} className="link font-sans text-sm">
+                  <Link
+                    href={`/projects/${publication.projectSlug}`}
+                    className="link font-sans text-sm"
+                  >
                     Project write-up →
                   </Link>
                 )}
@@ -88,7 +113,7 @@ export default function PublicationsPage() {
                         <dt className="meta">
                           <SciNotation>{entry.label}</SciNotation>
                         </dt>
-                        <dd className="mt-1 text-[1.0625rem] text-accent">
+                        <dd className="mt-1 font-serif text-[1.125rem] text-accent">
                           <SciNotation>{entry.value}</SciNotation>
                         </dd>
                       </div>
@@ -104,9 +129,9 @@ export default function PublicationsPage() {
                 </div>
               )}
             </article>
-          ))}
-        </div>
-      </section>
+          </Reveal>
+        </Band>
+      ))}
     </>
   );
 }

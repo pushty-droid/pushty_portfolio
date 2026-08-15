@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { Band } from "@/components/Band";
+import { BandHero } from "@/components/BandHero";
 import { GutterEntry } from "@/components/GutterEntry";
-import { PageHeader } from "@/components/PageHeader";
+import { Reveal } from "@/components/Reveal";
 import { SciNotation } from "@/components/SciNotation";
 import { SectionHeading } from "@/components/SectionHeading";
 import { observationalExperience, research } from "@/data/research";
@@ -16,17 +18,19 @@ export const metadata: Metadata = {
 export default function ResearchPage() {
   return (
     <>
-      <PageHeader
+      <BandHero
         eyebrow="Research"
         title="Research experience"
+        image={null}
         intro="Four positions, newest first — from inflationary magnetogenesis at IIA to model-independent tests of cosmic isotropy at VIT."
       />
 
-      <section className="container-page pt-16">
-        <div className="space-y-16">
-          {research.map((position) => (
+      {/* One band per position, alternating tone. The gutter timeline reads
+          as a continuous rail because each band keeps the same inner grid. */}
+      {research.map((position, index) => (
+        <Band key={position.slug} tone={index % 2 === 0 ? "violet" : "deep"}>
+          <Reveal>
             <GutterEntry
-              key={position.slug}
               label={
                 <>
                   <span className="block">{position.dates}</span>
@@ -36,7 +40,7 @@ export default function ResearchPage() {
                 </>
               }
             >
-              <h2 className="type-h3">{position.title}</h2>
+              <h2 className="type-title">{position.title}</h2>
               <p className="meta mt-1">
                 {position.institution} · {position.location}
               </p>
@@ -63,7 +67,7 @@ export default function ResearchPage() {
                     <li key={highlight} className="flex gap-3">
                       <span
                         aria-hidden="true"
-                        className="mt-[0.72em] size-1 shrink-0 rounded-full bg-muted"
+                        className="mt-[0.72em] size-1 shrink-0 rounded-full bg-accent"
                       />
                       <span className="text-[0.975rem] leading-relaxed">
                         <SciNotation>{highlight}</SciNotation>
@@ -81,27 +85,35 @@ export default function ResearchPage() {
 
               {position.projectSlug && (
                 <p className="mt-5">
-                  <Link href={`/projects/${position.projectSlug}`} className="link font-sans text-sm">
+                  <Link
+                    href={`/projects/${position.projectSlug}`}
+                    className="link font-sans text-sm"
+                  >
                     Read the full write-up →
                   </Link>
                 </p>
               )}
             </GutterEntry>
-          ))}
-        </div>
-      </section>
+          </Reveal>
+        </Band>
+      ))}
 
-      <section className="container-page pt-20">
-        <SectionHeading eyebrow="Hands-on">Observational &amp; lab experience</SectionHeading>
-        <ul className="measure space-y-3">
-          {observationalExperience.map((item) => (
-            <li key={item} className="flex gap-3 border-b border-rule pb-3">
-              <span aria-hidden="true" className="mt-[0.72em] size-1 shrink-0 rounded-full bg-muted" />
-              <span className="text-[0.975rem]">{item}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <Band tone="light">
+        <Reveal>
+          <SectionHeading eyebrow="Hands-on">Observational and lab experience</SectionHeading>
+          <ul className="measure space-y-3">
+            {observationalExperience.map((item) => (
+              <li key={item} className="flex gap-3 border-b border-rule pb-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-[0.72em] size-1 shrink-0 rounded-full bg-accent"
+                />
+                <span className="text-[0.975rem]">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+      </Band>
     </>
   );
 }

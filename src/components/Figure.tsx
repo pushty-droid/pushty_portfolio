@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { SciNotation } from "./SciNotation";
+
 type Props = {
   /** When null the whole figure is omitted — no empty frame, no broken image. */
   src: string | null;
@@ -31,8 +33,11 @@ export function Figure({ src, alt, caption, credit, width = 1600, height = 1000 
           className="h-auto w-full"
         />
       </div>
+      <span aria-hidden="true" className="grad-bar mt-4 w-16" />
+      {/* Captions carry physics notation, so they go through the same
+          `_{sub}` / `^{sup}` parser the rest of the site uses. */}
       <figcaption className="meta mt-3 max-w-[60ch]">
-        {caption}
+        <SciNotation>{caption}</SciNotation>
         {credit && <span className="block opacity-75">{credit}</span>}
       </figcaption>
     </figure>

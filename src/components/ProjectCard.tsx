@@ -8,7 +8,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <article className="card group relative flex flex-col p-6 sm:p-8">
       <ResultStat value={project.stat.value} caption={project.stat.caption} />
 
-      <h3 className="type-h3 mt-8">
+      <h3 className="type-title mt-8 text-[1.25rem]">
         <Link
           href={`/projects/${project.slug}`}
           className="transition-colors after:absolute after:inset-0 group-hover:text-accent"

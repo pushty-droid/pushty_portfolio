@@ -1,27 +1,32 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { Band } from "./Band";
+import { BandHero } from "./BandHero";
 import { ResultStat } from "./ResultStat";
 import { SciNotation } from "./SciNotation";
 import { getProject } from "@/data/projects";
 
 /**
  * Shell for the two project write-ups. The MDX files supply the prose; this
- * supplies the header, the result, and the navigation around it.
+ * supplies the hero, the result, and the navigation around it.
  */
 export function ProjectPage({ slug, children }: { slug: string; children: ReactNode }) {
   const project = getProject(slug);
 
   return (
     <>
-      <header className="container-page border-b border-rule pb-12 pt-14 sm:pt-20">
-        <p className="eyebrow">{project.shortTitle}</p>
-
-        <h1 className="mt-4 max-w-[24ch] text-[clamp(2rem,4.5vw,3rem)] font-semibold leading-[1.12] tracking-tight text-balance">
+      {/* The title is a question in sentence case, so it takes the body face
+          rather than the uppercase display one — BandHero's own title slot
+          gets the short label instead. */}
+      <BandHero eyebrow={project.dates} title={project.shortTitle} image={null}>
+        <p className="max-w-[28ch] font-sans text-lg font-semibold leading-snug">
           {project.title}
-        </h1>
+        </p>
+      </BandHero>
 
-        <div className="mt-10 flex flex-wrap items-start justify-between gap-x-10 gap-y-8">
+      <Band tone="deep">
+        <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-8">
           <ResultStat value={project.stat.value} caption={project.stat.caption} />
 
           <dl className="meta grid gap-x-8 gap-y-2 sm:grid-cols-2">
@@ -52,20 +57,20 @@ export function ProjectPage({ slug, children }: { slug: string; children: ReactN
             </div>
           </dl>
         </div>
-      </header>
+      </Band>
 
-      <article className="container-page pt-14">{children}</article>
+      <Band tone="violet">
+        <article>{children}</article>
 
-      <nav className="container-page pt-16" aria-label="Project">
-        <div className="flex flex-wrap gap-3 border-t border-rule pt-8">
+        <nav aria-label="Project" className="mt-16 flex flex-wrap gap-3 border-t border-rule pt-8">
           <Link href="/projects" className="btn-secondary">
             ← All projects
           </Link>
           <Link href="/publications" className="btn-secondary">
             Publications
           </Link>
-        </div>
-      </nav>
+        </nav>
+      </Band>
     </>
   );
 }

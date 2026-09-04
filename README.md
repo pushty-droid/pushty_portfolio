@@ -4,7 +4,7 @@ Personal academic site for PhD applications: early-universe cosmology and
 gravitational-wave physics. Next.js (App Router) + Tailwind, exported as a
 static site.
 
-**Live: <https://pushty-portfolio.vercel.app>**
+**Live: <https://pushty-shrimankar-geodesic.vercel.app>**
 
 ```bash
 npm install

@@ -522,6 +522,172 @@
 }
 
 /* ============================================================
+   Hero sparkle — the ambient layer over hero photography
+
+   Three parallax starfields and three four-point accents, sitting
+   above the hero image and its scrim but below the text. Every
+   layer only ever *adds* light, at alphas low enough that the
+   contrast reasoning in BandHero is untouched.
+
+   Motion is transform + opacity only, so it stays on the
+   compositor; the drift distance on each layer is exactly its
+   tile size, which is what makes the loop seamless. The global
+   prefers-reduced-motion reset in @layer base stops all of it.
+   ============================================================ */
+
+.hero-sparkle-root {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  overflow: hidden;
+  pointer-events: none;
+  /* Faint enough to read as shimmer on the photo rather than as a
+     starfield competing with it. */
+  opacity: 0.75;
+}
+
+.hero-sparkle {
+  position: absolute;
+  /* Oversized so a drifting layer never brings its own edge into view. */
+  inset: -45%;
+  background-repeat: repeat;
+  will-change: transform, opacity;
+}
+
+/* Far — small, dim, dense, slowest. */
+.hero-sparkle--far {
+  background-size: 340px 340px;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 34% 62%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 58% 9%, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1px 1px at 77% 44%, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(1px 1px at 91% 76%, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1px 1px at 24% 88%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 46% 33%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 68% 95%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 5% 52%, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(1px 1px at 85% 21%, rgba(255, 255, 255, 0.3), transparent);
+  animation:
+    hero-sparkle-drift-far 260s linear infinite,
+    hero-sparkle-twinkle 13s ease-in-out infinite;
+}
+
+/* Mid — the body of the field. */
+.hero-sparkle--mid {
+  background-size: 520px 520px;
+  background-image:
+    radial-gradient(1.4px 1.4px at 18% 41%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1.4px 1.4px at 63% 14%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1.4px 1.4px at 82% 67%, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(1.4px 1.4px at 39% 84%, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1.4px 1.4px at 7% 73%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1.4px 1.4px at 95% 30%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1.4px 1.4px at 52% 55%, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1.4px 1.4px at 28% 6%, rgba(255, 255, 255, 0.55), transparent);
+  animation:
+    hero-sparkle-drift-mid 190s linear infinite,
+    hero-sparkle-twinkle 11s ease-in-out infinite reverse;
+}
+
+/* Near — few, brightest, fastest. Carries the parallax. */
+.hero-sparkle--near {
+  background-size: 760px 760px;
+  background-image:
+    radial-gradient(2px 2px at 22% 27%, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(2px 2px at 71% 58%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(2px 2px at 44% 91%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 88% 12%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 9% 66%, rgba(255, 255, 255, 0.75), transparent);
+  animation:
+    hero-sparkle-drift-near 130s linear infinite,
+    hero-sparkle-twinkle 7s ease-in-out infinite;
+}
+
+/* The four-point accents. Each is its own fixed-size square, placed by
+   percentage, so it keeps its shape on any band width while the starfields
+   drift past behind it. */
+.hero-sparkle-accent {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.9);
+  /* Placed by its own centre rather than its top-left corner. */
+  translate: -50% -50%;
+  animation: hero-sparkle-accent-pulse 9s ease-in-out infinite;
+}
+
+/* Staggered so the three never pulse together. */
+.hero-sparkle-accent--b {
+  animation-duration: 12s;
+  animation-delay: -4s;
+}
+
+.hero-sparkle-accent--c {
+  animation-duration: 15s;
+  animation-delay: -8s;
+}
+
+@keyframes hero-sparkle-drift-far {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-340px, -340px, 0);
+  }
+}
+
+@keyframes hero-sparkle-drift-mid {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(520px, -520px, 0);
+  }
+}
+
+@keyframes hero-sparkle-drift-near {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-760px, -760px, 0);
+  }
+}
+
+/* Shimmer, not a flash — the floor stays high so nothing blinks out. */
+@keyframes hero-sparkle-twinkle {
+  0%,
+  100% {
+    opacity: 0.62;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-sparkle-accent-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.72);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+}
+
+/* Belt and braces over the global reset: park every layer at a still,
+   mid-brightness frame rather than wherever the reset happened to stop it. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-sparkle,
+  .hero-sparkle-accent {
+    animation: none !important;
+    transform: none !important;
+    opacity: 0.7;
+  }
+}
+
+/* ============================================================
    KaTeX
    ============================================================ */
 

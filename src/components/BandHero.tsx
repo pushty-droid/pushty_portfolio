@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
+import { HeroSparkle } from "./HeroSparkle";
+
 type Props = {
   eyebrow?: string;
   title: string;
@@ -13,6 +15,11 @@ type Props = {
   image?: string | null;
   /** Attribution for the background image. NASA/ESA licences require it. */
   credit?: string | null;
+  /**
+   * The ambient sparkle layer over the image. On by default; pass `false`
+   * for a hero where the picture has to stay completely clean.
+   */
+  sparkle?: boolean;
   /** Buttons or links under the intro. */
   children?: ReactNode;
 };
@@ -22,7 +29,15 @@ type Props = {
  * over it. With an image it's a photograph under a gradient scrim; without
  * one it's the gradient alone.
  */
-export function BandHero({ eyebrow, title, intro, image, credit, children }: Props) {
+export function BandHero({
+  eyebrow,
+  title,
+  intro,
+  image,
+  credit,
+  sparkle = true,
+  children,
+}: Props) {
   return (
     <header
       className={`band band--gradient relative isolate overflow-hidden py-20 sm:py-28 ${
@@ -60,6 +75,9 @@ export function BandHero({ eyebrow, title, intro, image, credit, children }: Pro
           />
         </>
       )}
+
+      {/* Above the image and its scrim, below the text — see HeroSparkle. */}
+      {sparkle && <HeroSparkle />}
 
       <div className="container-page flex flex-col items-center text-center">
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}

@@ -6,12 +6,12 @@ export const education: Education[] = [
     institution: "Vellore Institute of Technology (VIT)",
     affiliation: "Vellore, India",
     years: "2024 – 2026",
-    // Sources disagree: the CV says 9.01, the content sheet says 8.94/10.
-    // Using the CV figure pending confirmation — see TODO.md.
-    grade: "CGPA 9.01 / 10",
+    // Confirmed by Pushty: current CGPA is 8.94 / 10 (the content sheet's
+    // figure; the CV's 9.01 was an earlier-semester snapshot).
+    grade: "CGPA 8.94 / 10",
     rank: null,
     notes: [
-      "Master's thesis carried out at the Indian Institute of Astrophysics, Bengaluru, under the Visiting Student Programme 2026. Submitted May 2026.",
+      "Master's thesis carried out at the Indian Institute of Astrophysics, Bengaluru, as a Project Intern under the Visiting Student Programme 2026. Submitted May 2026.",
     ],
     coursework: [
       "General Relativity",

@@ -11,7 +11,7 @@ import { navigation } from "@/lib/site";
  */
 const affiliations = [
   "M.Sc. Physics, Vellore Institute of Technology",
-  "Visiting Student, Indian Institute of Astrophysics, Bengaluru",
+  "Project Intern, Indian Institute of Astrophysics, Bengaluru",
 ];
 
 const lastUpdated = "August 2026";

@@ -18,9 +18,9 @@ export default function AboutPage() {
   return (
     <>
       <BandHero
-        eyebrow="About"
         title="About"
-        image={null}
+        image="/images/ngc6559-star-forming-region.jpeg"
+        credit="Background: NGC 6559 — a star-forming region in Sagittarius (ESO)"
         intro={profile.oneLinerLong}
       />
 

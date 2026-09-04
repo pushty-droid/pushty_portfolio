@@ -19,6 +19,22 @@ export const metadata: Metadata = {
  * entry — or an entry whose src is null — falls back to a full-width text
  * column, so this map can stay incomplete without breaking the layout.
  */
+/**
+ * A full-bleed astronomy background for each project band, keyed by slug. The
+ * scrim in `Band` keeps the stat and prose legible over any of these; a slug
+ * with no entry just gets its flat tone back.
+ */
+const projectBackgrounds: Record<string, { src: string; credit: string }> = {
+  "gw-from-magnetogenesis": {
+    src: "/images/neutron-star-black-hole-merger-artist-impression.jpg",
+    credit: "Background: artist's impression of a compact-object merger",
+  },
+  "distance-duality-anisotropy": {
+    src: "/images/milky-way-full-sky-panorama.jpeg",
+    credit: "Background: ESO / S. Brunier — the Milky Way panorama",
+  },
+};
+
 const projectFigures: Record<
   string,
   { src: string | null; alt: string; caption: string; credit?: string }
@@ -45,12 +61,18 @@ export default function ProjectsPage() {
       <BandHero
         eyebrow="Projects"
         title="Two questions, worked end to end"
-        image={null}
+        image="/images/black-hole-accretion-disk-artist-impression.jpeg"
+        credit="Background: artist's impression of a black-hole accretion disk"
         intro="Each write-up follows the same three beats: the question, my approach, and what I found."
       />
 
       {projects.map((project, index) => (
-        <Band key={project.slug} tone={index % 2 === 0 ? "violet" : "deep"}>
+        <Band
+          key={project.slug}
+          tone={index % 2 === 0 ? "violet" : "deep"}
+          image={projectBackgrounds[project.slug]?.src ?? null}
+          credit={projectBackgrounds[project.slug]?.credit ?? null}
+        >
           <Reveal>
             <TopicRow
               eyebrow={project.dates}

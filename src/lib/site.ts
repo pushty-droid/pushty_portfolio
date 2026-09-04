@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Pushty Shrimankar",
   tagline: "Early-universe cosmology and gravitational waves",
   description:
-    "Pushty Shrimankar — early-universe cosmologist working on gravitational-wave signatures of primordial magnetic fields. M.Sc. Physics, VIT Vellore; Visiting Student, Indian Institute of Astrophysics.",
+    "Pushty Shrimankar — early-universe cosmologist working on gravitational-wave signatures of primordial magnetic fields. M.Sc. Physics, VIT Vellore; Project Intern, Indian Institute of Astrophysics.",
 } as const;
 
 export const navigation = [

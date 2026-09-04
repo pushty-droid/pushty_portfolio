@@ -31,7 +31,8 @@ export default function CvPage() {
         <BandHero
           eyebrow="Curriculum vitae"
           title="CV"
-          image={null}
+          image="/images/gw170817-neutron-star-merger-illustration.jpg"
+          credit="Background: NSF / LIGO / Sonoma State (A. Simonnet) — illustration of the GW170817 neutron-star merger"
           intro="The full record — education, research, publications, talks, skills and outreach. Print this page for a clean PDF."
         />
       </div>

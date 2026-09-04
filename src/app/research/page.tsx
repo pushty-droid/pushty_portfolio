@@ -19,9 +19,9 @@ export default function ResearchPage() {
   return (
     <>
       <BandHero
-        eyebrow="Research"
         title="Research experience"
-        image={null}
+        image="/images/m82-cigar-galaxy-starburst-superwind.jpeg"
+        credit="Background: M82, the Cigar starburst galaxy — X-ray / optical / infrared composite"
         intro="Four positions, newest first — from inflationary magnetogenesis at IIA to model-independent tests of cosmic isotropy at VIT."
       />
 

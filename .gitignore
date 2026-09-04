@@ -29,3 +29,8 @@ yarn-error.log*
 # env
 .env
 .env*.local
+
+# private / not for the public repo
+GW imprints(Masters thesis) Pushty Shrimankar.pdf
+TODO.md
+content/10-open-questions.md

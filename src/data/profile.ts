@@ -16,7 +16,7 @@ export const profile: Profile = {
 
   currently: [
     "Final-year M.Sc. Physics, VIT Vellore",
-    "Visiting Student, Indian Institute of Astrophysics",
+    "Project Intern, Indian Institute of Astrophysics",
     "Applying for PhD positions, 2026 cycle",
   ],
 

@@ -11,15 +11,37 @@ import { getProject } from "@/data/projects";
  * Shell for the two project write-ups. The MDX files supply the prose; this
  * supplies the hero, the result, and the navigation around it.
  */
+/**
+ * The astronomy background behind each write-up's hero, keyed by slug. The
+ * scrim baked into BandHero carries the contrast; a slug with no entry falls
+ * back to the plain gradient.
+ */
+const projectHeroImages: Record<string, { src: string; credit: string }> = {
+  "gw-from-magnetogenesis": {
+    src: "/images/neutron-star-black-hole-merger-artist-impression.jpg",
+    credit: "Background: artist's impression of a compact-object merger",
+  },
+  "distance-duality-anisotropy": {
+    src: "/images/milky-way-full-sky-panorama.jpeg",
+    credit: "Background: ESO / S. Brunier — the Milky Way panorama",
+  },
+};
+
 export function ProjectPage({ slug, children }: { slug: string; children: ReactNode }) {
   const project = getProject(slug);
+  const hero = projectHeroImages[slug];
 
   return (
     <>
       {/* The title is a question in sentence case, so it takes the body face
           rather than the uppercase display one — BandHero's own title slot
           gets the short label instead. */}
-      <BandHero eyebrow={project.dates} title={project.shortTitle} image={null}>
+      <BandHero
+        eyebrow={project.dates}
+        title={project.shortTitle}
+        image={hero?.src ?? null}
+        credit={hero?.credit ?? null}
+      >
         <p className="max-w-[28ch] font-sans text-lg font-semibold leading-snug">
           {project.title}
         </p>

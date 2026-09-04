@@ -22,7 +22,8 @@ export default function TalksPage() {
       <BandHero
         eyebrow="Talks and outreach"
         title="Speaking, schools, and public science"
-        image={null}
+        image="/images/rho-ophiuchi-cloud-complex-jwst.jpeg"
+        credit="Background: the Rho Ophiuchi cloud complex (NASA/ESA/CSA, JWST)"
       />
 
       {upcoming.length > 0 && (

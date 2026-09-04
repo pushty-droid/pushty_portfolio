@@ -5,8 +5,8 @@
 ## M.Sc. Physics — Vellore Institute of Technology (VIT), Vellore
 
 - **Years:** 2024–2026
-- **CGPA:** ⚠️ **conflict between sources** — CV says **9.01**, website content sheet says **8.94 / 10**. Confirm before publishing (see `10-open-questions.md`).
-- **Master's thesis:** carried out at the Indian Institute of Astrophysics (IIA), Bengaluru, under the Visiting Student Programme 2026. Submitted May 2026.
+- **CGPA:** **8.94 / 10** (confirmed by Pushty — the CV's 9.01 was an earlier-semester snapshot).
+- **Master's thesis:** carried out at the Indian Institute of Astrophysics (IIA), Bengaluru, as a Project Intern under the Visiting Student Programme 2026. Submitted May 2026.
 
 ### Coursework (full list, from content sheet)
 

@@ -20,7 +20,8 @@ export default function PublicationsPage() {
       <BandHero
         eyebrow="Publications"
         title="Papers and preprints"
-        image={null}
+        image="/images/supernova-explosion-with-surviving-companion-star-artist-impression.jpeg"
+        credit="Background: artist's impression of a core-collapse supernova with a surviving companion star"
         intro="One first-author preprint prepared for JCAP, and a completed M.Sc. thesis."
       />
 

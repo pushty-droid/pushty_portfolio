@@ -7,7 +7,7 @@
 - **Full name:** Pushty Shrimankar
 - **Pronouns / gender reference:** she/her (thesis certificate refers to "her")
 - **Current role:** Final-year M.Sc. Physics student, Vellore Institute of Technology (VIT), Vellore (2024–2026)
-- **Current affiliation:** Visiting Student, Indian Institute of Astrophysics (IIA), Bengaluru — Master's thesis
+- **Current affiliation:** Project Intern, Indian Institute of Astrophysics (IIA), Bengaluru — Master's thesis (Visiting Student Programme 2026)
 - **Status:** Applying for PhD positions in theoretical cosmology and gravitational-wave physics, 2026 admissions cycle
 - **Registration number:** 24MSP0062 (VIT)
 

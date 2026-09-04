@@ -4,14 +4,28 @@ Personal academic site for PhD applications: early-universe cosmology and
 gravitational-wave physics. Next.js (App Router) + Tailwind, exported as a
 static site.
 
+**Live: <https://pushty-portfolio.vercel.app>**
+
 ```bash
 npm install
 npm run dev      # http://localhost:3000
 npm run build    # static export to out/
 ```
 
-`npm run build` writes a fully static site to `out/`, deployable to Vercel,
-GitHub Pages, Netlify or any static host with no server.
+`npm run build` writes a fully static site to `out/` — no server, so it will
+run on Vercel, GitHub Pages, Netlify or any static host.
+
+## Deployment
+
+Hosted on Vercel, which builds from this repo on every push to `main`. Nothing
+to configure: Vercel reads the Next.js preset and `output: "export"` from
+`next.config.mjs`, and there are no environment variables.
+
+The canonical origin is `siteConfig.url` in `src/lib/site.ts`. It feeds
+`metadataBase`, so canonical URLs, Open Graph tags, `robots.txt` and
+`sitemap.xml` all derive from that one string — **point it at a custom domain
+the same day the domain goes live**, or link previews and the sitemap keep
+advertising an address that no longer serves the site.
 
 ## Where the content lives
 

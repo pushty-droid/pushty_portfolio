@@ -1,6 +1,6 @@
 export const siteConfig = {
   /** Update once the real domain is live — used for canonical URLs and JSON-LD. */
-  url: "https://pushtyshrimankar.com",
+  url: "https://pushty-portfolio.vercel.app",
   title: "Pushty Shrimankar",
   tagline: "Early-universe cosmology and gravitational waves",
   description:

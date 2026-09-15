@@ -6,7 +6,7 @@ export const publications: Publication[] = [
       "Directional Tests of the Cosmic Distance Duality Relation using Pantheon+ and BAO",
     authors: "Pushty Shrimankar, Gopal Kashyap",
     leadAuthor: true,
-    venue: "Preprint · astro-ph.CO · prepared for submission to JCAP",
+    venue: "Published · Journal of Cosmology and Astroparticle Physics (JCAP) · Scopus-indexed",
     year: "2026",
     arxivId: "2604.04436",
     url: "https://arxiv.org/abs/2604.04436",

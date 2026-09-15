@@ -11,7 +11,7 @@ import { publications } from "@/data/publications";
 export const metadata: Metadata = {
   title: "Publications",
   description:
-    "arXiv:2604.04436 — Directional Tests of the Cosmic Distance Duality Relation using Pantheon+ and BAO — plus the M.Sc. thesis on gravitational-wave imprints from inflationary magnetogenesis.",
+    "Directional Tests of the Cosmic Distance Duality Relation using Pantheon+ and BAO — published in JCAP — plus the M.Sc. thesis on gravitational-wave imprints from inflationary magnetogenesis.",
 };
 
 export default function PublicationsPage() {
@@ -22,7 +22,7 @@ export default function PublicationsPage() {
         title="Papers and preprints"
         image="/images/supernova-explosion-with-surviving-companion-star-artist-impression.jpeg"
         credit="Background: artist's impression of a core-collapse supernova with a surviving companion star"
-        intro="One first-author preprint prepared for JCAP, and a completed M.Sc. thesis."
+        intro="One first-author paper published in JCAP, and a completed M.Sc. thesis."
       />
 
       {publications.map((publication, index) => (

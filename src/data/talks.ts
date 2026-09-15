@@ -24,19 +24,24 @@ export const talks: Talk[] = [
 
 export const awards: Award[] = [
   {
-    title: "Ranked 9th in B.Sc. Physics",
-    detail: "Saurashtra University",
-    year: "2022",
-  },
-  {
     title: "Selected, Visiting Student Programme",
     detail: "Indian Institute of Astrophysics, Bengaluru",
+    year: "2026",
+  },
+  {
+    title: "Recipient, National Scholarship for Post Graduate Studies (NSPGS)",
+    detail: "University Grants Commission (UGC), Government of India · M.Sc. Physics",
     year: "2026",
   },
   {
     title: "Selected, ICTS Summer School in Gravitational Waves",
     detail: "International Centre for Theoretical Sciences",
     year: "2025",
+  },
+  {
+    title: "Ranked 9th in B.Sc. Physics",
+    detail: "Saurashtra University",
+    year: "2022",
   },
   {
     title: "Selected, IUCAA Summer School in Astronomy and Astrophysics",

@@ -49,7 +49,12 @@ export const profile: Profile = {
       href: "https://github.com/pushty-droid",
       handle: "pushty-droid",
     },
-    // ORCID, Google Scholar and INSPIRE-HEP are not yet set up.
+    {
+      label: "ORCID",
+      href: "https://orcid.org/0009-0007-1501-2337",
+      handle: "0009-0007-1501-2337",
+    },
+    // Google Scholar and INSPIRE-HEP are not yet set up.
     // Add them here and they appear everywhere links are rendered.
   ],
 

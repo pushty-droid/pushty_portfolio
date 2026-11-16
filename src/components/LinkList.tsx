@@ -7,7 +7,7 @@ type Props = {
 
 /**
  * Renders only the profiles that actually have URLs, and nothing at all when
- * none do. GitHub, ORCID, Google Scholar and INSPIRE-HEP can be added to
+ * none do. Google Scholar and INSPIRE-HEP can be added to
  * `profile.links` later and will appear here with no layout change.
  */
 export function LinkList({ links, className = "" }: Props) {

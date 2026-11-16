@@ -41,8 +41,8 @@ Three approved variants from the content sheet. Pick per context:
 | --- | --- |
 | LinkedIn | https://linkedin.com/in/pushty-shrimankar-652198280 — active |
 | arXiv paper | https://arxiv.org/abs/2604.04436 (published: JCAP 10 (2026) 028, DOI: https://doi.org/10.1088/1475-7516/2026/10/028) |
-| GitHub | **not provided** |
-| ORCID | **not provided** |
+| GitHub | https://github.com/pushty-droid |
+| ORCID | https://orcid.org/0009-0007-1501-2337 |
 | Google Scholar | **not provided** |
 | INSPIRE-HEP | **not provided** |
 

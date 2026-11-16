@@ -43,7 +43,7 @@ Three approved variants from the content sheet. Pick per context:
 | arXiv paper | https://arxiv.org/abs/2604.04436 (published: JCAP 10 (2026) 028, DOI: https://doi.org/10.1088/1475-7516/2026/10/028) |
 | GitHub | https://github.com/pushty-droid |
 | ORCID | https://orcid.org/0009-0007-1501-2337 |
-| Google Scholar | **not provided** |
+| Google Scholar | https://scholar.google.com/citations?hl=en&user=drIAl_4AAAAJ |
 | INSPIRE-HEP | **not provided** |
 
 > Build the links section so missing profiles can be dropped in later without layout changes. See `10-open-questions.md`.

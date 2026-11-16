@@ -6,11 +6,11 @@ export const publications: Publication[] = [
       "Directional Tests of the Cosmic Distance Duality Relation using Pantheon+ and BAO",
     authors: "Pushty Shrimankar, Gopal Kashyap",
     leadAuthor: true,
-    venue: "Published · Journal of Cosmology and Astroparticle Physics (JCAP) · Scopus-indexed",
+    venue: "Published · Journal of Cosmology and Astroparticle Physics (JCAP) 10 (2026) 028 · Scopus-indexed",
     year: "2026",
     arxivId: "2604.04436",
     url: "https://arxiv.org/abs/2604.04436",
-    doi: "https://doi.org/10.48550/arXiv.2604.04436",
+    doi: "https://doi.org/10.1088/1475-7516/2026/10/028",
     description:
       "A model-independent search for directional anisotropy in the cosmic distance duality relation, yielding a 95% upper bound of A < 0.025 on the dipole amplitude — consistent with isotropy, and stable across supernova calibration choices.",
     keyNumbers: [
@@ -28,12 +28,15 @@ export const publications: Publication[] = [
   title  = {Directional Tests of the Cosmic Distance Duality Relation
             using Pantheon+ and BAO},
   author = {Shrimankar, Pushty and Kashyap, Gopal},
+  journal = {JCAP},
+  volume = {10},
+  pages  = {028},
   year   = {2026},
+  doi    = {10.1088/1475-7516/2026/10/028},
   eprint = {2604.04436},
   archivePrefix = {arXiv},
   primaryClass  = {astro-ph.CO},
-  doi    = {10.48550/arXiv.2604.04436},
-  url    = {https://arxiv.org/abs/2604.04436}
+  url    = {https://doi.org/10.1088/1475-7516/2026/10/028}
 }`,
     pdf: null,
     projectSlug: "distance-duality-anisotropy",

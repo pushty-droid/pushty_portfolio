@@ -10,6 +10,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { news } from "@/data/news";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
+import { publications } from "@/data/publications";
 
 export default function HomePage() {
   return (
@@ -27,17 +28,29 @@ export default function HomePage() {
         eyebrow="Early-universe cosmology"
         title={profile.name}
         image="/images/planck-galactic-magnetic-field.webp"
-        credit="Background: ESA and the Planck Collaboration"
+        credit="Image credit: ESA and the Planck Collaboration — Planck map of the Galactic magnetic field"
         intro={
           <>
-            <span className="block">{profile.oneLiner}</span>
-            <span className="mt-4 block text-base opacity-90">{profile.status}</span>
+            <p>{profile.oneLiner}</p>
+            <p className="mt-4 text-base opacity-90">{profile.status}</p>
+            <p className="mt-4 text-base opacity-90">
+              Published in{" "}
+              <a href={publications[0].doi ?? undefined} target="_blank" rel="noreferrer" className="link">
+                JCAP 10 (2026) 028
+              </a>
+              .
+            </p>
           </>
         }
       >
-        <Link href="/publications" className="btn-primary">
+        <a
+          href={publications[0].doi ?? publications[0].url ?? "/publications"}
+          target="_blank"
+          rel="noreferrer"
+          className="btn-primary"
+        >
           Read the paper
-        </Link>
+        </a>
         <Link href="/cv" className="btn-secondary">
           View CV
         </Link>

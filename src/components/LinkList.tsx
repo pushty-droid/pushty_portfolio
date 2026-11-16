@@ -25,6 +25,7 @@ export function LinkList({ links, className = "" }: Props) {
             className="text-muted transition-colors hover:text-accent"
           >
             {link.label}
+            {link.handle && " "}
             {link.handle && (
               <span className="ml-1.5 font-mono text-xs opacity-70">{link.handle}</span>
             )}

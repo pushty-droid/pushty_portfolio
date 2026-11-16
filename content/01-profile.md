@@ -6,7 +6,7 @@
 
 - **Full name:** Pushty Shrimankar
 - **Pronouns / gender reference:** she/her (thesis certificate refers to "her")
-- **Current role:** Final-year M.Sc. Physics student, Vellore Institute of Technology (VIT), Vellore (2024–2026)
+- **Current role:** M.Sc. Physics (2024–2026), Vellore Institute of Technology (VIT), Vellore — thesis submitted May 2026
 - **Current affiliation:** Project Intern, Indian Institute of Astrophysics (IIA), Bengaluru — Master's thesis (Visiting Student Programme 2026)
 - **Status:** Applying for PhD positions in theoretical cosmology and gravitational-wave physics, 2026 admissions cycle
 - **Registration number:** 24MSP0062 (VIT)
@@ -40,7 +40,7 @@ Three approved variants from the content sheet. Pick per context:
 | Profile | URL / status |
 | --- | --- |
 | LinkedIn | https://linkedin.com/in/pushty-shrimankar-652198280 — active |
-| arXiv paper | https://arxiv.org/abs/2604.04436 (DOI: https://doi.org/10.48550/arXiv.2604.04436) |
+| arXiv paper | https://arxiv.org/abs/2604.04436 (published: JCAP 10 (2026) 028, DOI: https://doi.org/10.1088/1475-7516/2026/10/028) |
 | GitHub | **not provided** |
 | ORCID | **not provided** |
 | Google Scholar | **not provided** |

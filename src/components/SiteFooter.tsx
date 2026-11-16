@@ -11,10 +11,10 @@ import { navigation } from "@/lib/site";
  */
 const affiliations = [
   "M.Sc. Physics, Vellore Institute of Technology",
-  "Project Intern, Indian Institute of Astrophysics, Bengaluru",
+  "Former Project Intern, Indian Institute of Astrophysics, Bengaluru",
 ];
 
-const lastUpdated = "August 2026";
+const lastUpdated = "November 2026";
 
 export function SiteFooter() {
   return (

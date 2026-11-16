@@ -15,8 +15,8 @@ export const profile: Profile = {
   status: "Applying for PhD positions in theoretical cosmology and gravitational-wave physics, 2026 cycle.",
 
   currently: [
-    "Final-year M.Sc. Physics, VIT Vellore",
-    "Project Intern, Indian Institute of Astrophysics",
+    "M.Sc. Physics (2024–2026), VIT Vellore; thesis submitted May 2026",
+    "Former Project Intern, Indian Institute of Astrophysics",
     "Applying for PhD positions, 2026 cycle",
   ],
 
@@ -35,15 +35,27 @@ export const profile: Profile = {
       handle: "pushty-shrimankar",
     },
     {
+      label: "JCAP",
+      href: "https://doi.org/10.1088/1475-7516/2026/10/028",
+      handle: "10 (2026) 028",
+    },
+    {
       label: "arXiv",
       href: "https://arxiv.org/abs/2604.04436",
       handle: "2604.04436",
     },
-    // GitHub, ORCID, Google Scholar and INSPIRE-HEP are not yet set up.
+    {
+      label: "GitHub",
+      href: "https://github.com/pushty-droid",
+      handle: "pushty-droid",
+    },
+    // ORCID, Google Scholar and INSPIRE-HEP are not yet set up.
     // Add them here and they appear everywhere links are rendered.
   ],
 
   researchInterests: [
+    "DESI and large-scale structure",
+    "Cosmic distance duality & tests of isotropy",
     "Early-universe cosmology",
     "Gravitational waves",
     "Theoretical astrophysics",
@@ -54,9 +66,9 @@ export const profile: Profile = {
 
   specialization: {
     primary:
-      "Early-universe cosmology — inflationary magnetogenesis and the stochastic gravitational-wave background it sources.",
+      "Observational cosmology — DESI and large-scale structure, with model-independent, data-driven tests of the cosmological principle using Type Ia supernovae and BAO.",
     secondary:
-      "Observational cosmology — model-independent, data-driven tests of the cosmological principle using Type Ia supernovae and BAO.",
+      "Early-universe cosmology — inflationary magnetogenesis and the stochastic gravitational-wave background it sources.",
     peripheral: "Modified gravity; fast radio bursts and the CMB; plasma astrophysics.",
   },
 

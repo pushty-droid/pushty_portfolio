@@ -60,7 +60,10 @@ export default function CvPage() {
           </div>
         </div>
 
-        <div className="mt-6" data-print-hide>
+        <div className="mt-6 flex flex-wrap gap-3" data-print-hide>
+          <a href="/CV_Pushty_Shrimankar.pdf" download className="btn-primary">
+            Download CV (PDF)
+          </a>
           <PrintButton />
         </div>
       </header>
@@ -140,11 +143,18 @@ export default function CvPage() {
             sub={publication.authors}
           >
             <p className="meta">{publication.venue}</p>
-            {publication.url && (
-              <p className="mt-1 font-sans text-sm">
-                <a href={publication.url} target="_blank" rel="noreferrer" className="link">
-                  {publication.arxivId ? `arXiv:${publication.arxivId}` : publication.url}
-                </a>
+            {(publication.doi || publication.url) && (
+              <p className="mt-1 flex flex-wrap gap-x-4 font-sans text-sm">
+                {publication.doi && (
+                  <a href={publication.doi} target="_blank" rel="noreferrer" className="link">
+                    {publication.doi.replace("https://", "")}
+                  </a>
+                )}
+                {publication.url && (
+                  <a href={publication.url} target="_blank" rel="noreferrer" className="link">
+                    {publication.arxivId ? `arXiv:${publication.arxivId}` : publication.url}
+                  </a>
+                )}
               </p>
             )}
             {publication.supervisors && (

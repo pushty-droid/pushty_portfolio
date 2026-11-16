@@ -52,8 +52,8 @@ the reference the data files were written from — not rendered by the site.
 ## Things worth knowing
 
 **Missing data hides itself.** Optional fields are typed `T | null` and every
-component renders nothing when its data is null. There is no photo, no GitHub
-link and no thesis PDF right now, and the site reads as finished anyway. Fill
+component renders nothing when its data is null. There is no photo and no
+thesis PDF right now, and the site reads as finished anyway. Fill
 one in and it appears — no layout work. See `TODO.md`.
 
 **Physics notation.** Data strings support `_{sub}` and `^{sup}`, rendered as

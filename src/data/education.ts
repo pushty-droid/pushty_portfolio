@@ -35,8 +35,8 @@ export const education: Education[] = [
     institution: "H. and H. B. Kotak Institute of Science",
     affiliation: "Saurashtra University, Rajkot, India",
     years: "2019 – 2022",
-    grade: "CGPA 9 / 10",
-    rank: "Ranked 9th in the university",
+    grade: "CGPA 9.55 / 10 · First Distinction",
+    rank: "9th Rank, Saurashtra University",
     notes: [
       "Final-year project: Solar Differential Rotation — analysed solar photospheric rotation using sunspot tracking. Supervisor: Prof. Hari Om Vats.",
     ],

@@ -5,9 +5,9 @@
 ## 1. Directional Tests of the Cosmic Distance Duality Relation using Pantheon+ and BAO
 
 - **Authors:** Pushty Shrimankar, Gopal Kashyap *(lead author)*
-- **Status:** Preprint on arXiv — arXiv:2604.04436 [astro-ph.CO]. Prepared for submission to **JCAP**.
+- **Status:** Published — JCAP 10 (2026) 028; preprint arXiv:2604.04436 [astro-ph.CO].
 - **URL:** https://arxiv.org/abs/2604.04436
-- **DOI:** https://doi.org/10.48550/arXiv.2604.04436
+- **DOI:** https://doi.org/10.1088/1475-7516/2026/10/028
 
 **One-line description for the site:**
 

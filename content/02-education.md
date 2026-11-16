@@ -19,6 +19,6 @@ General Relativity · Astrophysics · Statistical Mechanics · Electrodynamics �
 ## B.Sc. Physics — H. and H. B. Kotak Institute of Science, Rajkot (Saurashtra University)
 
 - **Years:** 2019–2022
-- **CGPA:** 9 / 10
+- **CGPA:** 9.55 / 10 — First Distinction, 9th Rank (Saurashtra University)
 - **Rank:** 9th in the university (Saurashtra University)
 - **Final-year project:** *Solar Differential Rotation* — analysed solar photospheric rotation using sunspot tracking. Supervisor: Prof. Hari Om Vats.

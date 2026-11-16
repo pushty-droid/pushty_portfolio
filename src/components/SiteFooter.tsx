@@ -5,16 +5,13 @@ import { profile } from "@/data/profile";
 import { navigation } from "@/lib/site";
 
 /**
- * Suyu's footer habits: the affiliations spelled out, contact repeated, and a
- * "last updated" line so a reader can tell how current the page is. Only the
- * institutions are named — no street address and no phone number.
+ * Suyu's footer habits: the affiliations spelled out and contact repeated. Only
+ * the institutions are named — no street address and no phone number.
  */
 const affiliations = [
   "M.Sc. Physics, Vellore Institute of Technology",
   "Former Project Intern, Indian Institute of Astrophysics, Bengaluru",
 ];
-
-const lastUpdated = "November 2026";
 
 export function SiteFooter() {
   return (
@@ -67,7 +64,6 @@ export function SiteFooter() {
         <p className="meta">
           © {new Date().getFullYear()} {profile.name}
         </p>
-        <p className="meta">Last updated: {lastUpdated}</p>
       </div>
     </footer>
   );
